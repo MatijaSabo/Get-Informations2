@@ -44,8 +44,6 @@ public class WeatherServiceImpl implements WeatherService
         RestTemplate request = new RestTemplate();
         String result = request.getForObject(builder.toUriString(), String.class);
 
-        System.out.println(builder.toUriString());
-
         JSONObject jsonObject = new JSONObject(result);
 
         weather.setPlace(jsonObject.getString("name"));
